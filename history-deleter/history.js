@@ -31,8 +31,8 @@ getActiveTab().then((tabs) => {
   var hostname = get_hostname(tabs[0].url);
 
   // Search for all history entries for the current windows domain.
-  // Because this could be a lot of entries, lets limit it to 5.
-  var searchingHistory = browser.history.search({text: hostname, maxResults:5});
+  // Because this could be a lot of entries, lets limit it to 30.
+  var searchingHistory = browser.history.search({text: hostname, maxResults:30});
   searchingHistory.then((results) => {
     // What to show if there are no results.
     if (results.length < 1) {
